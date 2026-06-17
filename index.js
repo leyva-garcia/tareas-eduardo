@@ -15,7 +15,11 @@ const taskList = document.getElementById("task-list")
 const btn = document.getElementById("btn")
 
 btn.addEventListener("click", function() {
-    const inputFieldValue = inputField.value
+    const inputFieldValue = inputField.value.trim()
+
+    if (inputFieldValue === "") {
+        return
+    }
     
     push(habitInDB, inputFieldValue)
 
